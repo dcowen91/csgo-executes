@@ -344,7 +344,7 @@ public void OnPluginStart() {
   g_CZCTSideCookie = RegClientCookie("executes_cz_ct_side", "", CookieAccess_Private);
   g_CZTSideCookie = RegClientCookie("executes_cz_t_side", "", CookieAccess_Private);
   g_CTRifleCookie = RegClientCookie("executes_ct_rifle", "", CookieAccess_Private);
-  g_CRifleCookie = RegClientCookie("executes_t_rifle", "", CookieAccess_Private);
+  g_TRifleCookie = RegClientCookie("executes_t_rifle", "", CookieAccess_Private);
 }
 
 public void OnPluginEnd() {
@@ -1101,7 +1101,7 @@ public void UpdateTeams() {
       SwitchPlayerTeam(client, CS_TEAM_T);
       g_Team[client] = CS_TEAM_T;
 
-      if (g_CRifle[client] == TRiflePref_ak) {
+      if (g_TRifle[client] == TRiflePref_ak) {
         g_PlayerPrimary[client] = "weapon_ak47";
       } else {
         g_PlayerPrimary[client] = "weapon_sg556";

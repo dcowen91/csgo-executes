@@ -130,7 +130,7 @@ public void OnClientCookiesCached(int client) {
   g_CZCTSide[client] = GetCookieBool(client, g_CZCTSideCookie, true);
   g_CZTSide[client] = GetCookieBool(client, g_CZTSideCookie, true);
   g_CTRifle[client] = GetCTRiflePrefCookie(client);
-  g_TRifle[client] = GetTRiflePrefCookie(client)
+  g_TRifle[client] = GetTRiflePrefCookie(client);
 }
 
 public void SetSitePrefCookie(int client, SitePref site) {

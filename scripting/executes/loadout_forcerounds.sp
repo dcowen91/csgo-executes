@@ -170,6 +170,6 @@ static void AssignT(int client) {
   }
 
   if (StrEqual(g_PlayerPrimary[client], "weapon_ak47") && g_TRifle[client] == TRiflePref_sg) {
-      g_PlayerPrimary[client] = "weapon_sg556";
-    }
+    g_PlayerPrimary[client] = "weapon_sg556";
+  }
 }
