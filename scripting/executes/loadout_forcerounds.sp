@@ -84,9 +84,9 @@ static void AssignCT(int client) {
     }
 
     if (StrEqual(g_PlayerPrimary[client], "weapon_m4a1")) {
-      if (g_CTRifle[client] == CTRiflePref_silenced_m4) {
+      if (g_CTRifle[client] == CTRiflePref_Silenced_M4) {
         g_PlayerPrimary[client] = "weapon_m4a1_silencer";
-      } else if (g_CTRifle[client] == CTRiflePref_aug) {
+      } else if (g_CTRifle[client] == CTRiflePref_Aug) {
         g_PlayerPrimary[client] = "weapon_aug";
       }
     }
@@ -169,7 +169,7 @@ static void AssignT(int client) {
     g_PlayerNades[client] = "f";
   }
 
-  if (StrEqual(g_PlayerPrimary[client], "weapon_ak47") && g_TRifle[client] == TRiflePref_sg) {
+  if (StrEqual(g_PlayerPrimary[client], "weapon_ak47") && g_TRifle[client] == TRiflePref_Sg) {
     g_PlayerPrimary[client] = "weapon_sg556";
   }
 }

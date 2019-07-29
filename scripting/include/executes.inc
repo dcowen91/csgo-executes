@@ -28,14 +28,14 @@ enum StratType {
 };
 
 enum CTRiflePref {
-  CTRiflePref_m4 = 0,
-  CTRiflePref_silenced_m4 = 1,
-  CTRiflePref_aug = 2,
+  CTRiflePref_M4 = 0,
+  CTRiflePref_Silenced_M4 = 1,
+  CTRiflePref_Aug = 2,
 }
 
 enum TRiflePref {
-  TRiflePref_ak = 0,
-  TRiflePref_sg = 1,
+  TRiflePref_Ak = 0,
+  TRiflePref_Sg = 1,
 }
 
 // Most spawn flags only apply to gun rounds typically.

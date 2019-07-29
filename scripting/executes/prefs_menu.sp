@@ -6,20 +6,20 @@ public void GivePreferencesMenu(int client) {
 
   char choice[32];
   switch(g_CTRifle[client]) {
-    case CTRiflePref_m4:
+    case CTRiflePref_M4:
       choice = "M4A4";
-    case CTRiflePref_silenced_m4:
+    case CTRiflePref_Silenced_M4:
       choice = "M4A1-S";
-    case CTRiflePref_aug:
+    case CTRiflePref_Aug:
       choice = "AUG";
   }
   Format(buffer, sizeof(buffer), "CT Rifle choice: %s", choice);
   menu.AddItem("ct_rifle", buffer);
 
   switch(g_TRifle[client]) {
-    case TRiflePref_ak:
+    case TRiflePref_Ak:
       choice = "AK-47";
-    case TRiflePref_sg:
+    case TRiflePref_Sg:
       choice = "SG 553";
   }
   Format(buffer, sizeof(buffer), "T Rifle choice: %s", choice);
@@ -65,21 +65,21 @@ public int PreferencesMenuHandler(Menu menu, MenuAction action, int param1, int 
     menu.GetItem(param2, choice, sizeof(choice));
 
     if (StrEqual(choice, "ct_rifle")) {
-      if (g_CTRifle[client] == CTRiflePref_m4)
-        g_CTRifle[client] = CTRiflePref_silenced_m4;
-      else if (g_CTRifle[client] == CTRiflePref_silenced_m4)
-        g_CTRifle[client] = CTRiflePref_aug;
-      else if (g_CTRifle[client] == CTRiflePref_aug)
-        g_CTRifle[client] = CTRiflePref_m4;
+      if (g_CTRifle[client] == CTRiflePref_M4)
+        g_CTRifle[client] = CTRiflePref_Silenced_M4;
+      else if (g_CTRifle[client] == CTRiflePref_Silenced_M4)
+        g_CTRifle[client] = CTRiflePref_Aug;
+      else if (g_CTRifle[client] == CTRiflePref_Aug)
+        g_CTRifle[client] = CTRiflePref_M4;
 
       SetCTRiflePrefCookie(client, g_CTRifle[client]);
       GivePreferencesMenu(client);
 
     } else if (StrEqual(choice, "t_rifle")) {
-      if (g_TRifle[client] == TRiflePref_ak)
-        g_TRifle[client] = TRiflePref_sg;
-      else if (g_TRifle[client] == TRiflePref_sg)
-        g_TRifle[client] = TRiflePref_ak;
+      if (g_TRifle[client] == TRiflePref_Ak)
+        g_TRifle[client] = TRiflePref_Sg;
+      else if (g_TRifle[client] == TRiflePref_Sg)
+        g_TRifle[client] = TRiflePref_Ak;
 
       SetTRiflePrefCookie(client, g_TRifle[client]);
       GivePreferencesMenu(client);

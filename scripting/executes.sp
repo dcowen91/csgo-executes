@@ -184,15 +184,11 @@ bool g_AllowAWP[MAXPLAYERS + 1];
 // CT
 Handle g_CZCTSideCookie;
 bool g_CZCTSide[MAXPLAYERS + 1];
-
-Handle g_CTRifleCookie;
 bool g_CTRifle[MAXPLAYERS + 1];
 
 // T
 Handle g_CZTSideCookie;
 bool g_CZTSide[MAXPLAYERS + 1];
-
-Handle g_TRifleCookie;
 bool g_TRifle[MAXPLAYERS + 1];
 
 SitePref g_SitePreference[MAXPLAYERS + 1];
@@ -343,8 +339,6 @@ public void OnPluginStart() {
   g_AllowAWPCookie = RegClientCookie("executes_awpchoice", "", CookieAccess_Private);
   g_CZCTSideCookie = RegClientCookie("executes_cz_ct_side", "", CookieAccess_Private);
   g_CZTSideCookie = RegClientCookie("executes_cz_t_side", "", CookieAccess_Private);
-  g_CTRifleCookie = RegClientCookie("executes_ct_rifle", "", CookieAccess_Private);
-  g_TRifleCookie = RegClientCookie("executes_t_rifle", "", CookieAccess_Private);
 }
 
 public void OnPluginEnd() {
@@ -459,8 +453,8 @@ public void ResetClientVariables(int client) {
   g_Team[client] = CS_TEAM_SPECTATOR;
   g_PluginTeamSwitch[client] = false;
   g_RoundPoints[client] = -POINTS_LOSS;
-  g_CTRifle[client] = CTRiflePref_m4;
-  g_TRifle[client] = TRiflePref_ak;
+  g_CTRifle[client] = CTRiflePref_M4;
+  g_TRifle[client] = TRiflePref_Ak;
   g_AllowAWP[client] = true;
   g_LastTeam[client] = CS_TEAM_T;
   g_SitePreference[client] = SitePref_None;
@@ -737,15 +731,15 @@ public Action Event_PlayerSpawn(Event event, const char[] name, bool dontBroadca
 
   if (!g_EditMode && InWarmup()) {
     if (GetClientTeam(client) == CS_TEAM_T) {
-      if (g_TRifle[client] == TRiflePref_ak) {
+      if (g_TRifle[client] == TRiflePref_Ak) {
         GivePlayerItem(client, "weapon_ak47");
       } else {
         GivePlayerItem(client, "weapon_sg556");
       }
     } else if (GetClientTeam(client) == CS_TEAM_CT) {
-      if (g_CTRifle[client] == CTRiflePref_m4) {
+      if (g_CTRifle[client] == CTRiflePref_M4) {
         GivePlayerItem(client, "weapon_m4a1");
-      } else if (g_CTRifle[client] == CTRiflePref_silenced_m4) {
+      } else if (g_CTRifle[client] == CTRiflePref_Silenced_M4) {
         GivePlayerItem(client, "weapon_m4a1_silencer");
       } else {
         GivePlayerItem(client, "weapon_aug");
@@ -1101,7 +1095,7 @@ public void UpdateTeams() {
       SwitchPlayerTeam(client, CS_TEAM_T);
       g_Team[client] = CS_TEAM_T;
 
-      if (g_TRifle[client] == TRiflePref_ak) {
+      if (g_TRifle[client] == TRiflePref_Ak) {
         g_PlayerPrimary[client] = "weapon_ak47";
       } else {
         g_PlayerPrimary[client] = "weapon_sg556";
@@ -1124,9 +1118,9 @@ public void UpdateTeams() {
 
       if (StrEqual(g_LastItemPickup[client], "ak47")) {
         g_PlayerPrimary[client] = "weapon_ak47";
-      } else if (g_CTRifle[client] == CTRiflePref_m4) {
+      } else if (g_CTRifle[client] == CTRiflePref_M4) {
         g_PlayerPrimary[client] = "weapon_m4a1";
-      } else if (g_CTRifle[client] == CTRiflePref_silenced_m4) {
+      } else if (g_CTRifle[client] == CTRiflePref_Silenced_M4) {
         g_PlayerPrimary[client] = "weapon_m4a1_silencer";
       } else {
         g_PlayerPrimary[client] = "weapon_aug";
