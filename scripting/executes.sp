@@ -184,12 +184,12 @@ bool g_AllowAWP[MAXPLAYERS + 1];
 // CT
 Handle g_CZCTSideCookie;
 bool g_CZCTSide[MAXPLAYERS + 1];
-bool g_CTRifle[MAXPLAYERS + 1];
+CTRiflePref g_CTRifle[MAXPLAYERS + 1];
 
 // T
 Handle g_CZTSideCookie;
 bool g_CZTSide[MAXPLAYERS + 1];
-bool g_TRifle[MAXPLAYERS + 1];
+TRiflePref g_TRifle[MAXPLAYERS + 1];
 
 SitePref g_SitePreference[MAXPLAYERS + 1];
 
