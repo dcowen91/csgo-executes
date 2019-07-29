@@ -66,20 +66,20 @@ public int PreferencesMenuHandler(Menu menu, MenuAction action, int param1, int 
 
     if (StrEqual(choice, "ct_rifle")) {
       if (g_CTRifle[client] == CTRiflePref_m4)
-        g_SitePreference[client] = CTRiflePref_silenced_m4;
-      else if (g_SitePreference[client] == CTRiflePref_silenced_m4)
-        g_SitePreference[client] = CTRiflePref_aug;
-      else if (g_SitePreference[client] == CTRiflePref_aug)
-        g_SitePreference[client] = CTRiflePref_m4;
+        g_CTRifle[client] = CTRiflePref_silenced_m4;
+      else if (g_CTRifle[client] == CTRiflePref_silenced_m4)
+        g_CTRifle[client] = CTRiflePref_aug;
+      else if (g_CTRifle[client] == CTRiflePref_aug)
+        g_CTRifle[client] = CTRiflePref_m4;
 
       SetCTRiflePrefCookie(client, g_CTRifle[client]);
       GivePreferencesMenu(client);
 
     } else if (StrEqual(choice, "t_rifle")) {
       if (g_TRifle[client] == TRiflePref_ak)
-        g_SitePreference[client] = TRiflePref_sg;
-      else if (g_SitePreference[client] == TRiflePref_sg)
-        g_SitePreference[client] = TRiflePref_ak;
+        g_TRifle[client] = TRiflePref_sg;
+      else if (g_TRifle[client] == TRiflePref_sg)
+        g_TRifle[client] = TRiflePref_ak;
 
       SetTRiflePrefCookie(client, g_TRifle[client]);
       GivePreferencesMenu(client);
@@ -126,7 +126,7 @@ public void OnClientCookiesCached(int client) {
     return;
 
   g_AllowAWP[client] = GetCookieBool(client, g_AllowAWPCookie);
-   g_SitePreference[client] = GetSitePrefCookie(client);
+  g_SitePreference[client] = GetSitePrefCookie(client);
   g_CZCTSide[client] = GetCookieBool(client, g_CZCTSideCookie, true);
   g_CZTSide[client] = GetCookieBool(client, g_CZTSideCookie, true);
   g_CTRifle[client] = GetCTRiflePrefCookie(client);

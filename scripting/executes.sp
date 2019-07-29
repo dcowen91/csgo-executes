@@ -1126,7 +1126,7 @@ public void UpdateTeams() {
         g_PlayerPrimary[client] = "weapon_ak47";
       } else if (g_CTRifle[client] == CTRiflePref_m4) {
         g_PlayerPrimary[client] = "weapon_m4a1";
-      } else if (g_CTRifle[client] == CTRiflePref_silenced_m4)
+      } else if (g_CTRifle[client] == CTRiflePref_silenced_m4) {
         g_PlayerPrimary[client] = "weapon_m4a1_silencer";
       } else {
         g_PlayerPrimary[client] = "weapon_aug";
