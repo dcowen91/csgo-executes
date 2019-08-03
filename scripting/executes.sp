@@ -1098,7 +1098,7 @@ public void UpdateTeams() {
     if (IsValidClient(client)) {
       SwitchPlayerTeam(client, CS_TEAM_T);
       g_Team[client] = CS_TEAM_T;
-      GivePrimaryRifle(client, CS_TEAM_T)
+      GivePrimaryRifle(client, CS_TEAM_T);
       g_PlayerSecondary[client] = "weapon_glock";
       g_PlayerNades[client] = "";
       g_PlayerKit[client] = false;
@@ -1116,7 +1116,7 @@ public void UpdateTeams() {
       if (StrEqual(g_LastItemPickup[client], "ak47")) {
         g_PlayerPrimary[client] = "weapon_ak47";
       } else {
-        GivePrimaryRifle(client, CS_TEAM_CT)
+        GivePrimaryRifle(client, CS_TEAM_CT);
       }
 
       g_PlayerSecondary[client] = "weapon_hkp2000";
