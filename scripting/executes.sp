@@ -750,7 +750,6 @@ public Action Event_PlayerSpawn(Event event, const char[] name, bool dontBroadca
   if (!g_EditMode && InWarmup()) {
     GivePrimaryRifle(client, GetClientTeam(client));
     GivePlayerItem(client, g_PlayerPrimary[client]);
-
     Client_SetArmor(client, 100);
     SetEntProp(client, Prop_Send, "m_bHasHelmet", true);
   }
