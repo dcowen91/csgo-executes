@@ -182,12 +182,12 @@ enum CTRiflePref {
   CTRiflePref_M4 = 0,
   CTRiflePref_Silenced_M4 = 1,
   CTRiflePref_Aug = 2,
-}
+};
 
 enum TRiflePref {
   TRiflePref_Ak = 0,
   TRiflePref_Sg = 1,
-}
+};
 
 Handle g_AllowAWPCookie;
 bool g_AllowAWP[MAXPLAYERS + 1];
